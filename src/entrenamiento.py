@@ -44,3 +44,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 # === Paso 5: Entrenar el modelo ===
 modelo = RandomForestClassifier(random_state=42)
 modelo.fit(X_train, y_train)
+
+# === Paso 6: Evaluar modelo ===
+y_pred = modelo.predict(X_test)
+reporte = classification_report(y_test, y_pred)
