@@ -40,3 +40,7 @@ y = df_categorias[categoria_objetivo]
 
 # === Paso 4: Separar grupo de entrenamiento y prueba ===
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# === Paso 5: Entrenar el modelo ===
+modelo = RandomForestClassifier(random_state=42)
+modelo.fit(X_train, y_train)
