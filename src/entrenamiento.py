@@ -15,3 +15,21 @@ df_categorias = (
 )
 df_categorias = (df_categorias > 0).astype(int)
 print(df_categorias.head())
+
+# === Paso 2: Mostrar categorías disponibles ===
+categorias = sorted(df["Categoría"].unique().tolist())
+print("Selecciona la categoría que deseas precedir: \n")
+for i, cat in enumerate(categorias):
+    print(f"{i + 1}. {cat}")
+
+# Leer opción seleccionada
+try:
+    opcion = int(input("\nIngresa el número de la categoría: "))
+    if opcion < 1 or opcion > len(categorias):
+        raise ValueError
+    categoria_objetivo = categorias[opcion - 1]
+except ValueError:
+    print("Opción inválida. Debes ingresar un número entre 1 y", len(categorias))
+    exit()
+
+print(f"\nCategoría seleccionada: {categoria_objetivo}\n")
