@@ -48,3 +48,10 @@ modelo.fit(X_train, y_train)
 # === Paso 6: Evaluar modelo ===
 y_pred = modelo.predict(X_test)
 reporte = classification_report(y_test, y_pred)
+
+# === Paso 7: Guardar reporte ===
+with open("output/reporte_modelo.txt", "w") as f:
+    f.write(f"Categoría objetivo: {categoria_objetivo}\n")
+    f.write(reporte)
+
+print("Modelo entrenado y reporte guardado en output/reporte_modelo.txt")
