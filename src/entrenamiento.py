@@ -33,3 +33,7 @@ except ValueError:
     exit()
 
 print(f"\nCategoría seleccionada: {categoria_objetivo}\n")
+
+# === Paso 3: Separar las variables ===
+X = df_categorias.drop(columns=[categoria_objetivo])
+y = df_categorias[categoria_objetivo]
